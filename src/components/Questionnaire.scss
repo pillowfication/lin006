@@ -1,0 +1,32 @@
+@import "../settings";
+
+.audio {
+  width: 100%;
+}
+
+.ratings {
+  text-align: center;
+
+  & > i {
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0.2rem;
+      right: 0rem;
+      bottom: 0.2rem;
+      left: 0rem;
+      background-color: rgba($primary-color, 0);
+      transition: background-color 0.2s linear;
+    }
+    &:hover, &.selected {
+      &::before {
+        background-color: rgba($primary-color, 0.7);
+      }
+    }
+  }
+}

@@ -82,25 +82,28 @@ module.exports = {
           }
         }, {
           loader: 'sass-loader'
+        }, {
+          test: /\.(eot|ttf|woff2?)(\?.*)?$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name].[ext]'
+            }
+          }]
+        }, {
+          test: /\.(gif|png|jpe?g|svg)$/,
+          use: [{
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'images/[name].[ext]'
+            }
+          }]
+        }, {
+          test: /\.mp3$/,
+          loader: 'file-loader'
         }]
       })
-    }, {
-      test: /\.(eot|ttf|woff2?)(\?.*)?$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]'
-        }
-      }]
-    }, {
-      test: /\.(gif|png|jpe?g|svg)$/,
-      use: [{
-        loader: 'url-loader',
-        options: {
-          limit: 8192,
-          name: 'images/[name].[ext]'
-        }
-      }]
     }]
   }
 }

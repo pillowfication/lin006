@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import classnames from 'classnames'
 
 import Home from './components/Home.jsx'
@@ -14,11 +14,11 @@ class App extends Component {
       <Router>
         <div className={classnames(styles.app, zf.row)}>
           <h1>Questionnaire</h1>
-          <hr /><br />
+          <hr />
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/start' component={Questionnaire} />
-            <Route component={Home} />
+            <Route render={() => <Redirect to='/' />} />
           </Switch>
         </div>
       </Router>

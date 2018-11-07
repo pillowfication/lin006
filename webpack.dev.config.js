@@ -79,6 +79,9 @@ module.exports = {
           name: 'images/[name].[ext]'
         }
       }]
+    }, {
+      test: /\.mp3$/,
+      loader: 'file-loader'
     }]
   },
   devtool: 'source-map',
