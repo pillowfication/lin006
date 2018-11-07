@@ -66,7 +66,7 @@
 // ---------
 
 $global-font-size: 12pt;
-$global-width: 1200px;
+$global-width: 800px;
 $global-lineheight: 1.4;
 $foundation-palette: (
   primary: #1663c7,
@@ -80,7 +80,7 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+$body-background: lighten(map-get($foundation-palette, primary), 40%);
 $body-font-color: $black;
 $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -135,7 +135,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $header-color: $body-font-color;
 $header-lineheight: $global-lineheight;
-$header-margin-bottom: 1rem;
+$header-margin-bottom: 0;
 $header-styles: (
   small: (
     "h1": ("font-size": 24pt),
@@ -171,7 +171,7 @@ $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;
-$hr-margin: rem-calc(20) auto;
+$hr-margin: rem-calc(10) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
