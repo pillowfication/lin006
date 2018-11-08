@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 
 import japan from '../assets/japan10.mp3'
@@ -216,12 +217,11 @@ class Questionnaire extends Component {
               </button>
             </div>
             <div className={classnames(zf.small6, zf.columns)}>
-              <button
+              <Link to='/done'
                 className={classnames(zf.button, zf.large)}
-                onClick={this.onClickNext}
               >
                 Done
-              </button>
+              </Link>
             </div>
           </div>
         </div>

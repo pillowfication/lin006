@@ -4,6 +4,7 @@ import classnames from 'classnames'
 
 import Home from './components/Home.jsx'
 import Questionnaire from './components/Questionnaire.jsx'
+import Done from './components/Done.jsx'
 
 import zf from './foundation.scss'
 import styles from './App.scss'
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/start' component={Questionnaire} />
+            <Route exact path='/done' component={Done} />
             <Route render={() => <Redirect to='/' />} />
           </Switch>
         </div>

@@ -1,0 +1,10 @@
+@import "../settings";
+
+.thank-you {
+  padding: 4rem 0;
+  text-align: center;
+
+  i {
+    color: $success-color;
+  }
+}
