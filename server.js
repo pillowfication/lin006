@@ -25,6 +25,8 @@ function get (obj, path) {
 
 const app = express()
 
+app.set('trust proxy', 'loopback')
+
 app.use(bodyParser.json())
 
 if (process.env.NODE_ENV === 'production') {
@@ -36,7 +38,7 @@ app.use(express.static(path.resolve(__dirname, './dist')))
 app.post('/api/submit', (request, response) => {
   const questionnaire = {}
 
-  questionnaire.ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress
+  questionnaire.ip = request.ip
   questionnaire.startTime = get(request.body, [ 'startTime' ])
   questionnaire.endTime = get(request.body, [ 'endTime' ])
 
